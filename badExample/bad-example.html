@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://classless.de/classless.css">
+  <script type="module" src="/badExample/bad-example.js"></script>
+  <title>Bad Example</title>
+</head>
+<body>
+  <header>
+    <h1>This is the bad example page!</h1>
+  </header>
+  <main>
+    <div>
+      <h2>Why the example below is a good demonstration of what not to do for site security</h2>
+      <p>As you can see, a message appears after sumbitting the register form. It displays sensitive
+        information like user's new account's password without any involvements of  encryption
+        libraries such as OpenSSL and libsodium.It would be really easy for hackers retrieve password of the account after exploring the server.
+      </p>
+    </div>
+    <h2 style="font-weight: bold;">Example:</h2>
+    <form method="POST" id ="form" name="form" action="#">
+      <h2>Please register</h2>
+      <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="user_name" placeholder="enter username!">
+      </div>
+      <div>
+        <label for="pw">Password</label>
+        <input type="password" id="pw" name="pass_word" placeholder="enter password!">
+      </div>
+      <input type="submit" id="btn" name="button" value="register now" />
+    </form>
+    <div>
+      <p>Thank you for signing up for this website!! Your name is Sami Xie! Your password is 1234</p>
+    </div>
+  </main>
+</body>
+</html>
