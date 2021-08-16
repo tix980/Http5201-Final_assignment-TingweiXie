@@ -3,9 +3,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://classless.de/classless.css">
+  <title>Security</title>
 </head>
 <body>
-  <h1>This is the Security page!</h1>
+  <header>
+    <h1>This is the Security page!</h1>
+  </header>
+  <main>
+    <div id="part-1">
+      <h2>HTTP headers</h2>
+      <p>If you go to <a href="https://securityheaders.com/">This link</a> and enter this site's URL.
+      You can see that my website has a rating of "A+"(maximum security!!). In this page, I will explain the HTTP headers
+      that I have implemented in this website. Make you have create a text file called "_headers" or "netlify.toml" if you are going to use netlify to deploy your sites. </p>
+      <ul>
+        <li>Set X-Frame-Options to "DENY", so the site can defend against attacks like clickjacking</li>
+        <li>Set X-XSS-Protection to 1; mode=block,so the site can enables XSS filtering to prevent rendering of the page if an attack is detected. </li>
+        <li>Set X-Content-Type-Options to "nosniff", so it will stop a browser from trying to MIME-sniff the content type and forces it to stick with the declared content-type.</li>
+        <li>Set Referrer-Policy to "strict-origin-when-cross-origin", so The browser will send the full URL to requests to the same origin but only send the origin when requests are cross-origin.</li>
+        <li>Set Content-Security-Policy to "default-src https:", this header is an effective measure to protect the site from XSS attacks and would allow any assets to be loaded over https from any origin.</li>
+        <li>Set Permissions-Policy to "fullscreen=(), geolocation=()", this header allows a site to control which features and APIs can be used in the browser.By specifying an empty origin list, the specified features will be disabled for all documents, including nested documents, regardless of their origin.</li>
+      </ul>
+  </div>
+  <div id="part-2">
+    <div id="introduction">
+      <h2>Security Principles</h2>
+      <p>After implementing the HTTP headers above, lets talk about what security principles will protect our websites from getting exploited by hackers!</p>
+    </div>
+    <div>
+      <h3>Prevent injection attacks</h3>
+      <p>Make sure the textboxes in the site would allow special characters like";" or ")", so the attackers won't be able to perform injection attacks on the site.</p>
+    </div>
+    <div>
+      <h3>Don't allow weak passwords</h3>
+      <p>Make sure new accounts in this website won't allow weak passwords like 1234. You should make sure a new account’s password needs to meet certain requirements
+        such as “must be at least 12 characters”, “must include special characters”, and “one letter must be
+        capitalized” to eliminate weak passwords for hackers to guess</p>
+    </div>
+    <div>
+      <h3>Eliminate Sensitive Data Exposure</h3>
+      <p>Make sure sensitive data such as last four digits of user credit cards are not being displayed on the browser.We can use encryption
+        libraries such as OpenSSL and libsodium to encrpyt new accounts' passwords </p>
+    </div>
+    <div>
+      <h3>Update softwares</h3>
+      <p>If you ever use any softwares or software libraries on your website, make sure to update them frequently or turn on their auto-update feature. The reason of this is because software
+        developers always patch their softwares' glitches and flaws that may have been exploited by hackers.
+      </p>
+    </div>
+    <div>
+      <h3>Sufficent logging & Monitoring</h3>
+      <p>We need to use monitoring tool to keep track of any earlest warning of problem, so we can improve them before hackers have chance to attack the server. We also need
+        to have server logs to record and identify any unusual activities in the server. </p>
+    </div>
+  </div>
+  </main>
 </body>
 </html>
