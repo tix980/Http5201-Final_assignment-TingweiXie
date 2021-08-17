@@ -1,14 +1,13 @@
 // vite.config.js
-const { resolve } = require('path')
-
-module.exports = {
+import {resolve} from 'path';
+export default {
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        qualityAssurance: resolve(__dirname, 'qualityAssurance/quality-assurance.html'),
-        security: resolve(__dirname, 'security/security.html'),
-        badExample: resolve(__dirname, 'badExample/bad-example.html'),
+        main: resolve('index.html'),
+        qualityAssurance: resolve('qualityAssurance/quality-assurance.html'),
+        security: resolve('security/security.html'),
+        badExample: resolve('badExample/bad-example.html'),
       }
     }
   }
